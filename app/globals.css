@@ -1,0 +1,528 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+@import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
+@import 'react-pdf/dist/esm/Page/TextLayer.css';
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+} */
+
+body {
+  color: rgb(var(--foreground-rgb));
+  /* @apply font-custom; */
+
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+::-webkit-scrollbar {
+  height: 5px;
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 5px 5px 5px 5px #f2eaed;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c63d7f;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #c63d7f;
+}
+
+.mapboxgl-canvas {
+  left: 0;
+  position: absolute;
+  top: 0;
+  border-radius: 16px;
+}
+
+.mapboxgl-marker {
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  transition: opacity 0.2s;
+  will-change: transform;
+}
+
+.mapboxgl-map {
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 640px) {
+  .data-\[state\=open\]\:slide-in-from-right[data-state="open"] {
+    --tw-enter-translate-x: 0% !important;
+  }
+
+  .data-\[state\=closed\]\:slide-out-to-right[data-state="closed"] {
+    --tw-exit-translate-x: 0% !important;
+  }
+}
+
+/* Calendar */
+
+.fc-toolbar {
+  flex-wrap: wrap;
+  row-gap: 10px;
+}
+
+.activity-calendar .fc-toolbar-title,
+.appointment-calendar .fc-toolbar-title {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  flex-wrap: wrap;
+  color: #000000f2 !important;
+}
+
+.activity-calendar .fc-button-primary,
+.appointment-calendar .fc-button-primary {
+  outline: #33333326 !important;
+  border: 1px solid #33333326 !important;
+  background-color: transparent !important;
+  color: #000000f2 !important;
+  font-size: 12px !important;
+  border-radius: 8px !important;
+  padding: 5px 9px !important;
+  line-height: 1.2 !important;
+  text-transform: capitalize !important;
+}
+
+.activity-calendar .fc-button-primary:hover,
+.appointment-calendar .fc-button-primary:hover {
+  background-color: #0000000d !important;
+}
+
+.activity-calendar .fc-button-primary:focus {
+  box-shadow: none !important;
+}
+
+.activity-calendar .fc-button-group,
+.appointment-calendar .fc-button-group {
+  gap: 16px !important;
+  flex-wrap: wrap;
+}
+
+.activity-calendar .fc-button-primary .fc-icon,
+.appointment-calendar .fc-button-primary .fc-icon {
+  font-size: 16px !important;
+  color: #3333338c !important;
+}
+
+.activity-calendar .fc-today-button,
+.activity-calendar .fc-viewDropdown-button,
+.appointment-calendar .fc-today-button,
+.appointment-calendar .fc-viewDropdown-button {
+  padding: 8px 16px !important;
+}
+
+.activity-calendar .fc-col-header-cell-cushion,
+.appointment-calendar .fc-col-header-cell-cushion {
+  color: #333333b3 !important;
+  font-weight: 400 !important;
+  font-size: 12px !important;
+  line-height: 28px !important;
+}
+
+.activity-calendar .fc-event .appointment-calendar .fc-event {
+  background-color: #c63d7f !important;
+  border: 1px solid #c63d7f !important;
+  color: white !important;
+  font-size: 12px !important;
+}
+
+.activity-calendar .fc-daygrid-day-top {
+  font-size: 12px !important;
+}
+
+.appointment-calendar .fc-daygrid-day-top {
+  font-size: 16px !important;
+}
+
+.activity-calendar .fc .fc-view-harness {
+  height: 50vh !important;
+}
+
+.appointment-calendar .fc .fc-view-harness {
+  height: 75vh !important;
+}
+
+.fc .fc-view-harness-active>.fc-view {
+  overflow: auto;
+}
+
+.activity-calendar .fc-scrollgrid {
+  min-width: 1700px;
+}
+
+.appointment-calendar .fc-scrollgrid {
+  width: 100%;
+}
+
+.activity-calendar .fc .fc-daygrid-day-frame {
+  min-height: 150px;
+}
+
+.appointment-calendar .fc .fc-daygrid-day-frame {
+  size: 80px
+}
+
+.activity-calendar .fc .fc-scrollgrid-section-footer>*,
+.appointment-calendar .fc .fc-scrollgrid-section-footer>*,
+.fc .fc-scrollgrid-section-header>* {
+  border-radius: 4px 4px 0px 0px !important;
+}
+
+.fc .fc-scrollgrid-section table {
+  width: 100% !important;
+}
+
+.activity-calendar .fc-scrollgrid,
+.appointment-calendar .fc-scrollgrid,
+.fc-media-screen {
+  border-radius: 6px !important;
+}
+
+.activity-calendar .fc-scrollgrid-section td,
+.appointment-calendar .fc-scrollgrid-section td {
+  border-radius: 0px 0px 6px 6px !important;
+}
+
+.activity-calendar .fc .fc-daygrid-day.fc-day-today {
+  background-color: #c63d7f1a !important;
+}
+
+.appointment-calendar .fc-highlight {
+  background-color: #c63d7f4b !important;
+}
+
+.activity-calendar .fc .fc-daygrid-day.fc-day-today .fc-daygrid-day-number {
+  color: #c63d7f !important;
+}
+
+.activity-calendar .fc-viewDropdown-button,
+.appointment-calendar .fc-viewDropdown-button {
+  position: relative !important;
+}
+
+.activity-calendar .fc-button-group .fc-button-active,
+.appointment-calendar .fc-button-group .fc-button-active {
+  background-color: #c63d7f !important;
+  color: white !important;
+}
+
+.activity-calendar .fc-button-group .fc-button-active:hover,
+.appointment-calendar .fc-button-group .fc-button-active:hover {
+  background-color: #c63d7f !important;
+  color: white !important;
+}
+
+.activity-calendar .fc-today-button,
+.activity-calendar .fc-today-button:hover,
+.activity-calendar .fc-today-button:disabled,
+.appointment-calendar .fc-today-button,
+.appointment-calendar .fc-today-button:hover,
+.appointment-calendar .fc-today-button:disabled {
+  background-color: #c63d7f !important;
+  color: white !important;
+}
+
+.activity-calendar .fc-today-button:disabled,
+.appointment-calendar .fc-today-button:disabled {
+  opacity: 0.4 !important;
+}
+
+.activity-calendar .fc-scrollgrid-shrink-cushion,
+.appointment-calendar .fc-scrollgrid-shrink-cushion {
+  color: #3333338c !important;
+  font-size: 12px !important;
+}
+
+
+.activity-calendar .fc .fc-timegrid-col.fc-day-today {
+  background-color: #c63d7f1a !important;
+}
+
+.appointment-calendar .fc .fc-timegrid-col.fc-day-today {
+  background-color: #ffffff !important;
+}
+
+.activity-calendar .fc-event {
+  background-color: #c63d7f !important;
+  color: white !important;
+  font-size: 12px;
+}
+
+.appointment-calendar .unavailable-slot {
+  background-image: linear-gradient(-135deg, grey 25%, transparent 26%, transparent 50%, grey 50%, grey 75%, transparent 75%, transparent);
+  background-size: 10px 10px;
+}
+
+.appointment-calendar .fc-event-main {
+  background-color: #c63d7f !important;
+  border: none
+}
+
+.fc-theme-standard td,
+.fc-theme-standard th {
+  min-width: 100px;
+  min-height: 200px;
+}
+
+.fc-col-header {
+  width: 800px;
+}
+
+
+[data-radix-popper-content-wrapper] {
+  z-index: 30 !important;
+}
+
+.pac-container {
+  border-radius: 8px !important;
+}
+
+.pac-item {
+  padding: 8px 16px !important;
+}
+
+.pac-item-selected {
+  background-color: #fff1f7 !important;
+}
+
+.tags-input-focused {
+  border: 1px solid #C63D7F;
+  --tw-ring-color: #F4DCE6
+}
+
+.dispatch-calendar .react-calendar-timeline .rct-header-root {
+  background-color: white !important;
+  border-bottom: none !important;
+  height: 30px !important;
+}
+
+.dispatch-calendar .react-calendar-timeline .rct-header-root div {
+  border-right: 3px solid #e4e4e4 !important;
+
+}
+
+.dispatch-calendar .react-calendar-timeline .rct-header-root div+div {
+  border-right: none !important;
+}
+
+.dispatch-calendar .react-calendar-timeline .rct-header-root div,
+.dispatch-calendar .rct-hl-even,
+.dispatch-calendar .rct-hl-odd,
+.dispatch-calendar .rct-sidebar-row {
+  border-bottom: 1px solid #eeeeee !important;
+}
+
+.dispatch-calendar .rct-dateHeader span {
+  color: #333333b3 !important;
+  font-size: 12px !important;
+}
+
+.dispatch-calendar .rct-header-root .rct-calendar-header div+div {
+  display: flex;
+  border-bottom: none !important;
+  border-right: none !important;
+  border-left: none !important;
+  /* width: 150px !important */
+}
+
+.dispatch-calendar .rct-item {
+  background: #c63d7f !important;
+  border: none !important;
+}
+
+.dispatch-calendar .rct-sidebar-row-odd,
+.dispatch-calendar .rct-hl-odd {
+  background-color: #f5f5f594 !important;
+}
+
+.dispatch-calendar .rct-dateHeader {
+  border-bottom: none !important;
+  border: 1px solid #eeeeee !important;
+  border-right: none !important;
+  border-top: none !important;
+  color: #3333338c !important;
+  background: transparent !important;
+  border-left: none !important;
+  height: 30px !important;
+}
+
+.dispatch-calendar .rct-calendar-header {
+  border: none !important;
+  /* border-left: 2px solid #e4e4e4 !important; */
+}
+
+.dispatch-calendar .rct-sidebar {
+  border: none !important;
+  border-right: 3px solid #e4e4e4 !important;
+  height: auto !important;
+}
+
+.dispatch-calendar .react-calendar-timeline {
+  border: 1px solid #eeeeee !important;
+  border-radius: 8px;
+}
+
+.dispatch-calendar .rct-horizontal-lines div:last-child,
+.dispatch-calendar .rct-sidebar div:last-child {
+  border-bottom: none !important;
+}
+
+.dispatch-calendar .react-calendar-timeline {
+  min-width: 1000px;
+}
+
+.dispatch-calendar .rct-sidebar .rct-sidebar-row {
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.dispatch-calendar .rct-outer {
+  border-radius: 0 0 8px 0 !important;
+}
+
+.dispatch .rct-scroll {
+  height: 100% !important;
+  overflow: hidden !important;
+}
+
+.dispatch-calendar .rct-vl.rct-day-6,
+.dispatch-calendar .rct-vl.rct-day-0 {
+  background: #ff94c71a !important;
+}
+
+.dispatch-calendar .rct-vl {
+  border-left: 1px solid #eeeeee !important;
+  height: 100% !important;
+}
+
+input[type=color]::-webkit-color-swatch,
+input[type=color]::-webkit-color-swatch-wrapper {
+  border: none;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.accordian-btn svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.tech-calendar .react-calendar-timeline {
+  height: 400px !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+}
+
+.tech-calendar .rct-outer {
+  height: 390px !important;
+  overflow-y: auto !important;
+}
+
+.tech-calendar .rct-header-root {
+  position: sticky;
+  top: 0;
+  background-color: white !important;
+  z-index: 9999999 !important;
+}
+
+/**/
+
+.pricing-accordian svg {
+  display: none !important;
+}
+
+.pricing-accordian h3 {
+  width: fit-content;
+}
+
+.add-job-body {
+  line-height: 1.6;
+  font-size: 16px;
+  font-weight: 100;
+  color: #404040;
+  display: block;
+}
+
+.add-job-body input,
+.add-job-body .Select,
+.add-job-body textarea {
+  border: 1px solid #E71E8E;
+  color: #262626;
+  background: #FFFFFF;
+  height: 48px;
+  border-radius: 0;
+  animation-duration: 0ms;
+  transition-property: none;
+}
+
+.add-job-body *:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.add-job-body input:focus,
+.add-job-body .Select:focus,
+.add-job-body textarea:focus {
+  border-color: black !important;
+  border-width: 2px;
+  border-radius: 0.25rem;
+  ;
+}
+
+.add-job-body .Button {
+  margin-bottom: 8px;
+  color: #FFFFFF;
+  background-color: #E71E8E;
+  font-size: 1rem !important;
+  line-height: 1.2;
+  font-weight: 700;
+  border: unset;
+  padding: calc(1.111em* .5) calc(1.111em* .5) calc(1em* .5) calc(1.111em* .5);
+  width: 230px;
+  height: 48px;
+  border-radius: 100px;
+}
+
+.add-job-body .Button:hover {
+  background-color: black
+}
+
+.add-job-body .Checkbox {
+  border-radius: 0.25rem;
+}
+
+.web-activity-table td:has(.webActivityCell) {
+  width: 25%;
+}
+
+.web-activity-table td:has(.ActivityCreatedCell) {
+  width: 14%;
+}
